@@ -1,0 +1,52 @@
+<%- include('../partials/adminheader.ejs') %>
+
+<h2 class="page-title" id="home">Productos</h2>
+<a href="/admin/products/add-product" class="btn btn-primary">Añade un nuevo producto</a>
+<a class="btn btn-primary" href="#bottom-product">Final de la lista</a>
+<br><br>
+
+<% if (count > 0) { %>
+
+<table class="table table-striped" id="Table-p">
+
+  <thead>
+    <tr class="home">
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Categoria</th>
+        <th>Imagen del producto</th>
+        <th>Peso</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody id="sortable-1">
+    <% products.forEach(function(product){ %>
+      <tr>
+        <td><%= product.title %></td>
+        <td>$<%= parseFloat(product.price).toFixed(2) %></td>
+        <td><%= product.category %></td>
+        <td>
+            <% if (product.image == "") { %>
+                <img id="noimage" src="/images/noimage.png">
+            <% } else {%>
+                <img id="noimage" src="/product_images/<%= product._id %>/<%= product.image %>">
+            <% } %>
+        </td>
+        <td><%= product.weight %> g</td>
+        <td><a href="/admin/products/edit-product/<%= product._id %>" class="btn btn-info">Editar</a></td>
+              <td><a class="btn btn-danger confirmDeletion" href="/admin/products/delete-product/<%= product._id %>">Eliminar</a></td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+<div class="" id="bottom-product">
+  <a href="/admin/products/add-product" class="btn btn-primary">Añade un nuevo producto</a>
+  <a class="btn btn-primary" href="#home">Principio de la lista</a>
+</div>
+
+<% } else { %>
+    <h3 class="text-center">No hay productos.</h3>
+<% } %>
+
+<%- include('../partials/adminfooter.ejs') %>

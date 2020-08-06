@@ -1,0 +1,50 @@
+<%- include('partials/header') %>
+
+<div class="row">
+
+    <table class="table table-striped table-info table-responsive-xl">
+<thead>
+  <tr>
+    <th>Nombre:</th>
+    <th><h1><%= p.title %></h1></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Imagen:</td>
+    <td><img class="image2" src="/product_images/<%= p.id %>/<%= p.image %>" alt=""></td>
+  </tr>
+  <tr>
+    <td>Description:</td>
+    <td><h3><%= p.desc %></h3></td>
+  </tr>
+  <tr>
+    <td>Precio:</td>
+    <td>$ <%= parseFloat(p.price).toFixed(2) %></td>
+  </tr>
+  <!--<tr>
+    <td></td>
+    <td><% if (loggedIn) { %>
+    <p><a class="btn btn-outline-danger" href="/cart/add/<%= p.slug %>">&#128722 Añadir al carrito</a></p>
+    <% } else {%>
+    <p>Debes hacer log in para ingresar productos al carrito &#128722.</p>
+    <% } %></td>
+  </tr>-->
+</tbody>
+</table>
+    <div class="col-xs-12">
+        <ul class="gallery">
+            <% galleryImages.forEach(function(image){ %>
+            <% if (image != "thumbs") { %>
+            <li>
+                <a data-fancybox="gallery" href="/product_images/<%= p.id %>/gallery/<%= image %>">
+                    <img src="/product_images/<%= p.id %>/gallery/thumbs/<%= image %>" alt="">
+                </a>
+            </li>
+            <% } %>
+            <% }); %>
+        </ul>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

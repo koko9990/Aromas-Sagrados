@@ -1,0 +1,213 @@
+img.pimage {
+    width: 150px;
+    height: 180px;
+}
+
+a.pa {
+    display: inline-block;
+    height: 160px;
+}
+
+.row.products .p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+img.spi {
+    width: 100%;
+    margin-top: 50px;
+}
+
+ul.gallery li {
+    display: inline-block;
+    margin: 20px;
+    list-style: none;
+}
+
+img.cpi {
+    width: 100px;
+}
+
+table.alignmiddle td {
+    vertical-align: middle !important;
+}
+
+/*.pp {
+    position: absolute;
+    left: -3000px;
+}*/
+
+.ajaxbg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255, .8);
+    z-index: 2;
+    display: none;
+}
+
+.ajaxinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.alert-error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.page-header{
+  margin-bottom: 20px;
+  position: absolute;
+}
+
+.x{
+  margin-top: 50px;
+}
+
+.intro{
+  text-align: center;
+}
+
+/*.ubicanos{
+  background-color: blue;
+}
+
+.contactenos{
+  background-color: green;
+}*/
+
+.cat{
+  font-family: 'Impact', 'fantasy',black;
+  font-size: 3rem;
+  text-shadow: 4px 4px 4px #aaa;
+  text-align: center;
+}
+
+.rgba-gradient {
+  background: -moz-linear-gradient(60deg, rgba(255, 255, 255, 1), rgba(74, 223, 222, 0.8) 100%);
+  background: -webkit-linear-gradient(60deg, rgba(255, 255, 255, 1), rgba(74, 223, 222, 0.8) 100%);
+  background: linear-gradient(to 60deg, rgba(255, 255, 255, 1), rgba(74, 223, 222, 0.8) 100%);
+}
+
+.testimonial-text{
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.testimonial-image{
+  width: 10%;
+  border-radius: 100%;
+  margin:20px;
+}
+
+.carousel-inner{
+  font-family: 'Impact', 'fantasy';
+  font-weight: 200;
+  padding: 7% 15%;
+  text-align: center;
+  background: -moz-linear-gradient(60deg, rgba(255, 255, 255, 1), rgba(74, 223, 222, 0.8) 100%);
+  background: -webkit-linear-gradient(60deg, rgba(255, 255, 255, 1), rgba(74, 223, 222, 0.8) 100%);
+  background: linear-gradient(to 60deg, rgba(255, 255, 255, 1), rgba(74, 223, 222, 0.8) 100%);
+  color: #10375c;
+}
+
+.carousel-item{
+  padding: 7% 15%;
+}
+
+.jump-s{
+  margin-top: 150px;
+  margin-bottom: 150px;
+  border-style:none;
+  border-top-style: dotted;
+  border-color: #6c7b95;
+  border-width: 20px;
+  width:  25%;
+}
+
+iframe {
+  align-items: center;
+}
+
+.ubc{
+  font-family: 'Impact', 'fantasy';
+  font-weight: 200;
+  padding: 2%;
+  text-align: center;
+  color: #10375c;
+}
+
+/*body{
+  background: -moz-linear-gradient(45deg, rgba(184, 180, 84, 0.8), rgba(33, 45, 80, 0.1) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(184, 180, 84, 0.8), rgba(33, 45, 80, 0.1) 100%);
+  background: linear-gradient(to 45deg, rgba(184, 180, 84, 0.8), rgba(33, 45, 80, 0.1) 100%);
+  background-image: url("https://wallpaperaccess.com/full/5770.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+   }*/
+
+#noimage {
+       width: 30px;
+       height: 30px;
+   }
+
+#footer{
+     padding: 7% 15%;
+     text-align: center;
+     color: #aaa ;
+   }
+
+p{
+     color: #8f8f8f;
+   }
+
+i{
+  position: center;
+}
+
+.ay{
+  margin-bottom: 20px;
+}
+
+.image2{
+  width: 230px;
+  height: 280px;
+}
+
+.ftt{
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.btt{
+  background-color: rgba(74, 223, 222, 0.8);
+}
+
+.banner{
+  width: 800px;
+  height: 200px;
+}
+
+.gif-i{
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.hem{
+  text-align: center;
+  font-family: 'Impact', 'fantasy';
+  color: #005086;
+  margin-top: 80px;
+}
+
+.hem-i{
+  height: 200px;
+  weight: 230px;
+  margin-left: 230px;
+  margin-top: 50px;
+}

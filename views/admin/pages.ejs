@@ -1,0 +1,47 @@
+<%- include('../partials/adminheader.ejs') %>
+
+<h2 class="page-title">Paginas</h2>
+<a href="/admin/pages/add-page" class="btn btn-primary">Añade una nueva pagina</a>
+<br><br>
+
+<table class="table table-striped sorting">
+
+  <thead>
+    <tr class="home">
+        <th>Titulo</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody id="sortable-1">
+    <% pages.forEach(function(page){ %>
+      <tr id="id_<%= page._id %>" class="<%= page.slug %>">
+        <td><%= page.title %></td>
+        <td><a href="/admin/pages/edit-page/<%= page._id %>">Editar</a></td>
+          <% if (page.slug == "home") { %>
+            <td></td>
+            <% } else { %>
+              <td><a class="confirmDeletion" href="/admin/pages/delete-page/<%= page._id %>">Eliminar</a></td>
+            <% } %>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<script>
+      $( "#sortable-1" ).sortable({
+
+      items: "tr:not('.home')",
+      placeholder: "ui-state-hightlight",
+      update: function() {
+          var ids = $("#sortable-1").sortable('serialize');
+          var url = "/admin/pages/reorder-pages";
+
+          $.post(url, ids);
+      }
+  });
+
+
+</script>
+
+<%- include('../partials/adminfooter.ejs') %>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Jorge Galvez">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Aromas Sagrados </title>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src = "https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css"></script>
+    <script src="https://kit.fontawesome.com/fa2c874a0c.js" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+    <script src="https://kit.fontawesome.com/fa2c874a0c.js" crossorigin="anonymous"></script
+
+
+    </script>
+    <script>
+      $(document).ready(function() {
+        $('#Table-cat').DataTable();
+          } );
+    </script>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ajaxbg">
+        <div class="ajaxinner">
+            <h3>Ahora está siendo redirigido a PayPal ...</h3>
+            <img src="/images/ajax-loader.gif" alt=""/>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-info navbar-inverse">
+    <a class="navbar-brand" href="/">Aromas Sagrados</a>
+        <div id="navbar" class="container-fluid">
+          <ul class="nav navbar-nav">
+              <% pages.forEach(function(page){ %>
+              <% if (page.slug == "home") { %>
+              <li class="nav-item"><a class="nav-link" href="/"><i class="fas fa-home"> </i> <%= page.title %> </a></li>
+              <li class="nav-item"><a class="nav-link" href="/#ubicanos"><i class="fas fa-map-marked-alt"></i> Ubicanos </a></li>
+              <li class="nav-item"><a class="nav-link" href="/#contactenos"><i class="fas fa-phone-volume"></i> Contactenos </a></li>
+              <li class="nav-item"><a class="nav-link" href="/#testimonials2"><i class="fas fa-newspaper"></i> Noticias </a></li>
+              <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/aromassagradoss/"><i class="fab fa-facebook-square"></i></a></li>
+              <% } else {%>
+              <li class="nav-item"><a class="nav-link" href="/<%= page.slug %>"><%= page.title %> </a></li>
+              <% } %>
+              <% }); %>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a class="nav-link" href="/cart/checkout">Mi carrito <i class="fas fa-shopping-cart"></i> (
+                    <% if (typeof cart !== "undefined") { %>
+                    <%= cart.length %>
+                    <% } else {%>
+                    0
+                    <% } %>
+                )</a>
+            </li>
+            <% if (user) { %>
+            <li><a class="nav-link" href="/users/logout">Hi, <i class="fas fa-user-shield"></i> <%= user.username %> ( logout )</a></li>
+            <% } else {%>
+            <li><a class="nav-link" href="/users/register"><i class="fas fa-user"></i> Registrate</a></li>
+            <li><a class="nav-link" href="/users/login"><span class="glyphicon glyphicon-log-in"></span><i class="fas fa-sign-out-alt"></i> Log in</a></li>
+            <% } %>
+            <% if (user && user.admin == 1) { %>
+            <li><a class="nav-link" href="/admin/pages">Admin Area</a></li>
+            <% }%>
+          </ul>
+    </div>
+
+</nav>
+
+<div class="container">
+  <br>
+  <%- messages('messages', locals) %>
+
+  <% if (errors) {%>
+      <% errors.forEach(function(error) { %>
+      <div class="alert alert-danger">
+          <%= error.msg %>
+      </div>
+      <% });%>
+  <% }%>
+
+  <div class="row">
+      <div class="col-xs-12 col-md-3 ">
+          <h3 class="cat">Categorias</h3>
+          <ul class="list-group">
+              <li class="list-group-item list-group-item-dark "><a class="btn btn-outline-danger btn-block " href="/products">Todos los productos</a></li>
+              <% categories.forEach(function(c){ %>
+                  <li class="list-group-item "><a class="btn btn-info btn-block trp" href="/products/<%= c.slug %>"><%= c.title %></a></li>
+              <% }); %>
+          </ul>
+      </div>
+      <div class="col-xs-12 col-md-1"></div>
+      <div class="col-xs-12 col-md-8">

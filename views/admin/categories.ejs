@@ -1,0 +1,28 @@
+<%- include('../partials/adminheader.ejs') %>
+
+<h2 class="page-title">Categorias</h2>
+<a href="/admin/categories/add-category" class="btn btn-primary">Añade una nueva categoria</a>
+<br><br>
+
+<table class="table table-striped">
+
+  <thead>
+    <tr class="home">
+        <th>Categoria</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody id="sortable-2">
+    <% categories.forEach(function(cat){ %>
+      <tr>
+        <td><%= cat.title %></td>
+        <td><a href="/admin/categories/edit-category/<%= cat._id %>">Editar</a></td>
+        <td><a class="confirmDeletion" href="/admin/categories/delete-category/<%= cat._id %>">Eliminar</a></td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+
+<%- include('../partials/adminfooter.ejs') %>

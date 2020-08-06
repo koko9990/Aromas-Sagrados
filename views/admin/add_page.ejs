@@ -1,0 +1,27 @@
+<%- include('../partials/adminheader.ejs') %>
+
+<h2 class="page-title">Agregar pagina</h2>
+<a href="/admin/pages" class="btn btn-primary">Pagina anterior</a>
+<br><br>
+
+  <form method="post" action="/admin/pages/add-page">
+
+    <div class="form-group">
+        <label for="">Titulo</label>
+        <input type="text" class="form-control" name="title" value="<%= title %>" placeholder="Titulo">
+    </div>
+
+    <div class="form-group">
+        <label for="">Etiqueta</label>
+        <input type="text" class="form-control" name="slug" value="<%= slug %>" placeholder="Etiqueta">
+    </div>
+
+    <div class="form-group">
+        <label for="">Contenido</label>
+        <textarea name="content" class="form-control" id="ta" rows="10" cols="30" placeholder="Contenido"><%= content %></textarea>
+    </div>
+
+    <button class="btn btn-info">Submit</button>
+  </form>
+
+<%- include("../partials/adminfooter") %>
