@@ -109,7 +109,7 @@ app.use('/cart', cart);
 app.use('/users', users);
 app.use('/', pages);
 
-var port = 3000;
+var port = 5000;
 app.listen(port, function () {
     console.log('Server started on port ' + port);
 });
